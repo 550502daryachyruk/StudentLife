@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/animation_list"
+        android:orientation="vertical"
+        android:padding="40dp">
+
+        <EditText
+            android:id="@+id/nameOfTheEvent"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/nameOfTheEvent"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/background_light" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/StartOfEventDate"
+                android:layout_width="266dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/startOfEventDate"
+                android:inputType="date"
+                android:textColor="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/StartOfEventTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/startOfEventTime"
+                android:inputType="time"
+                android:textColor="@android:color/background_light" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/EndOfEventDate"
+                android:layout_width="266dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/endOfEventDate"
+                android:inputType="date"
+                android:textColor="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/EndOfEventTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/EndOfEventTime"
+                android:inputType="time"
+                android:textColor="@android:color/background_light" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/DescriptionOfEvent"
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:ems="10"
+            android:hint="@string/DescriptionOfEvent"
+            android:inputType="textMultiLine"
+            android:textColor="@android:color/background_light" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/signUpBotton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_xml_btn_yellow"
+                    android:elevation="0dp"
+                    android:onClick="checkLogin"
+                    android:text="@string/cancelInviteButton"
+                    tools:ignore="OnClick,UnusedAttribute"
+                    android:layout_marginEnd="20dp" />
+
+                <Button
+                    android:id="@+id/sendInviteButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_xml_btn_yellow"
+                    android:elevation="0dp"
+                    android:onClick="checkLogin"
+                    android:text="@string/ChangeEventButton"
+                    tools:ignore="OnClick,UnusedAttribute" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

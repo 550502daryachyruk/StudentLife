@@ -67,5 +67,16 @@
     <string name="registration_sex_w">Женский</string>
     <string name="dateTextView">Дата рождения</string>
     <string name="firstNameTextView">Имя</string>
+    <string name="send_invite">Создать мероприятие</string>
+    <string name="cancelInviteButton">Отмена</string>
+    <string name="nameOfTheEvent">Название мероприятия</string>
+    <string name="startOfEventDate">Дата начала</string>
+    <string name="startOfEventTime">Время начала</string>
+    <string name="endOfEventDate">Дата конца</string>
+    <string name="EndOfEventTime">Время конца</string>
+    <string name="DescriptionOfEvent">Описание мероприятия</string>
+    <string name="ChangeEventButton">Изменить мероприятие</string>
+    <string name="eventManager">Организатор</string>
+    <string name="eventDetails">Детали</string>
 
 </resources>
