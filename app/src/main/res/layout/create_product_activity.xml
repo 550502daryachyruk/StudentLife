@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="40dp">
+
+        <EditText
+            android:id="@+id/nameOfTheEvent"
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/product_name"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/background_light" />
+
+        <EditText
+            android:id="@+id/price_of_the_product"
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/price_of_the_product"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/background_light" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/DescriptionOfEvent"
+                android:layout_width="match_parent"
+                android:layout_height="97dp"
+                android:ems="10"
+                android:hint="@string/description_of_product"
+                android:inputType="textMultiLine"
+                android:textColor="@android:color/background_light" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/photoofchildleaguetextview"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/createLeaguePhotoTextEdit"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="NameOFPHOTO" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/signUpBotton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_xml_btn_yellow"
+                android:elevation="0dp"
+                android:onClick="checkLogin"
+                android:text="@string/cancelInviteButton"
+                tools:ignore="OnClick,UnusedAttribute" />
+
+            <Button
+                android:id="@+id/sendInviteButton"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_xml_btn_yellow"
+                android:elevation="0dp"
+                android:onClick="checkLogin"
+                android:text="@string/product_create"
+                tools:ignore="OnClick,UnusedAttribute" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
