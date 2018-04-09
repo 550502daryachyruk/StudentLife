@@ -1,5 +1,6 @@
 package com.a_team.studentlife.Server;
 
+import com.a_team.studentlife.Server.ServerResponse.ChangeUserInformationResponse;
 import com.a_team.studentlife.Server.ServerResponse.CreateLeagueResponse;
 import com.a_team.studentlife.Server.ServerResponse.ListAllUserNewsResponse;
 import com.a_team.studentlife.Server.ServerResponse.ListLeagueNewsResponse;
@@ -51,4 +52,10 @@ public interface APIService {
                                              @Query("email") String email,
                                              @Query("sex") int sex,
                                              @Query("birthday") String birthday);
+
+    @POST("/api/user/edit")
+    Call<ChangeUserInformationResponse> changeUserInformation(@Query("email") String email,
+                                                              @Query("firstname") String firstname,
+                                                              @Query("secondname") String secondname,
+                                                              @Query("newpassword") String newpassword);
 }
