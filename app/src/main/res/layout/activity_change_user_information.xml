@@ -141,7 +141,6 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_xml_btn_yellow"
                 android:elevation="0dp"
-                android:onClick="checkLogin"
                 android:text="@string/change_user_profile_text"
                 tools:ignore="OnClick,UnusedAttribute" />
         </RelativeLayout>

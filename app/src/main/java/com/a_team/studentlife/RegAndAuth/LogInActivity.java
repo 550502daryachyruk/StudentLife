@@ -17,6 +17,7 @@ import com.a_team.studentlife.R;
 import com.a_team.studentlife.Server.APIService;
 import com.a_team.studentlife.Server.Retrofit.ApiUtils;
 import com.a_team.studentlife.Server.ServerResponse.LoginResponse;
+import com.a_team.studentlife.UserInformation.ChangeUserInformation;
 import com.a_team.studentlife.UserInformation.User;
 
 import retrofit2.Call;
@@ -33,7 +34,6 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.log_in_activity);
-
 
         loginEditText = (EditText) findViewById(R.id.loginTextField);
         passwordEditText = (EditText) findViewById(R.id.passwordTextField);

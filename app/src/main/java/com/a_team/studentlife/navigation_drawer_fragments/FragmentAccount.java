@@ -1,15 +1,18 @@
 package com.a_team.studentlife.navigation_drawer_fragments;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.a_team.studentlife.R;
+import com.a_team.studentlife.UserInformation.ChangeUserInformation;
 import com.a_team.studentlife.UserInformation.User;
 
 /**
@@ -25,6 +28,8 @@ public class FragmentAccount extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private Button userStoreButton;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -69,11 +74,20 @@ public class FragmentAccount extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_account, container, false);
+        final View view = inflater.inflate(R.layout.fragment_account, container, false);
 
         userProfileName = (TextView) view.findViewById(R.id.user_profile_name);
         userProfileName.setText(User.getUserInstance().getFirstName() + " " +
                                 User.getUserInstance().getLastName());
+
+        userStoreButton = view.findViewById(R.id.userStoreButton);
+        userStoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), FragmentStore.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
