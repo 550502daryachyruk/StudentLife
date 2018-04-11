@@ -61,16 +61,17 @@ public class ChangeUserInformation extends AppCompatActivity implements View.OnC
         }
         if (view.getId() == R.id.changeInformationBottom) {
             APIService mAPIService = ApiUtils.getAPIService();
-            mAPIService.changeUserInformation(emailTextField.getText().toString(), firstNameTextField.getText().toString(),
+            mAPIService.changeUserInformation("6", emailTextField.getText().toString(), firstNameTextField.getText().toString(),
                     secondNameTextField.getText().toString(), password)
                     .enqueue(new Callback<ChangeUserInformationResponse>() {
                         @Override
                         public void onResponse(Call<ChangeUserInformationResponse> call, Response<ChangeUserInformationResponse> response) {
+                            String error = response.body().getError();
                             if (response.isSuccessful() && response.body().getError().equals("ok")) {
                                 Toast.makeText(ChangeUserInformation.this, "Успешная замена данных",
                                         Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(ChangeUserInformation.this, "Ошибка замены данных",
+                                Toast.makeText(ChangeUserInformation.this, "Ошибка замены данных" + " " + error,
                                         Toast.LENGTH_SHORT).show();
                             }
                         }

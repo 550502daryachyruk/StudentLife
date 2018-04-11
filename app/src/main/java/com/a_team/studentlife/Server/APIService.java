@@ -54,8 +54,9 @@ public interface APIService {
                                              @Query("birthday") String birthday);
 
     @POST("/api/user/edit")
-    Call<ChangeUserInformationResponse> changeUserInformation(@Query("email") String email,
+    Call<ChangeUserInformationResponse> changeUserInformation(@Query("id") String id,
+                                                              @Query("email") String email,
                                                               @Query("firstname") String firstname,
-                                                              @Query("secondname") String secondname,
-                                                              @Query("newpassword") String newpassword);
+                                                              @Query("lastname") String secondname,
+                                                              @Query("password") String newpassword);
 }
