@@ -23,6 +23,7 @@ public class ChangeUserInformation extends AppCompatActivity implements View.OnC
     AnimationDrawable animationDrawable;
     LinearLayout linearLayout;
     private String firstName, lastName;
+    private Integer id;
     private EditText emailTextField;
     private EditText firstNameTextField;
     private EditText secondNameTextField;
@@ -62,7 +63,8 @@ public class ChangeUserInformation extends AppCompatActivity implements View.OnC
         }
         if (view.getId() == R.id.changeInformationBottom) {
             APIService mAPIService = ApiUtils.getAPIService();
-            mAPIService.changeUserInformation("6", emailTextField.getText().toString(), firstNameTextField.getText().toString(),
+            id = User.getUserInstance().getId();
+            mAPIService.changeUserInformation(id.toString(), emailTextField.getText().toString(), firstNameTextField.getText().toString(),
                     secondNameTextField.getText().toString(), password)
                     .enqueue(new Callback<ChangeUserInformationResponse>() {
                         @Override
@@ -71,16 +73,14 @@ public class ChangeUserInformation extends AppCompatActivity implements View.OnC
                             if (response.isSuccessful() && response.body().getError().equals("ok")) {
                                 Toast.makeText(ChangeUserInformation.this, "Успешная замена данных",
                                         Toast.LENGTH_SHORT).show();
-                                if(firstNameTextField.getText().toString() == null){
-                                    firstName =  User.getUserInstance().getFirstName();
-                                }
-                                else {
+                                if (firstNameTextField.getText().toString() == null) {
+                                    firstName = User.getUserInstance().getFirstName();
+                                } else {
                                     firstName = firstNameTextField.getText().toString();
                                 }
-                                if (secondNameTextField.getText().toString() == null){
+                                if (secondNameTextField.getText().toString() == null) {
                                     lastName = User.getUserInstance().getLastName();
-                                }
-                                else {
+                                } else {
                                     lastName = secondNameTextField.getText().toString();
                                 }
                                 User.getUserInstance().setFirstName(firstName);
