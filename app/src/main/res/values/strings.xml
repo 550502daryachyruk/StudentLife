@@ -46,7 +46,7 @@
 
     // Create League
     <string name="createLeagueButton">Создать лигу</string>
-    <string name="createleaguehead">Создание новой лиги для</string>
+    <string name="createleaguehead">Создание новой лиги </string>
     <string name="nameofchildleaguetextview">Введите название лиги</string>
     <string name="descrofchildleaguetextview">Краткое описание:</string>
     <string name="photoofchildleaguetextview">Выберите фото</string>
