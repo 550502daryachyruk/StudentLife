@@ -22,6 +22,7 @@ public class ChangeUserInformation extends AppCompatActivity implements View.OnC
 
     AnimationDrawable animationDrawable;
     LinearLayout linearLayout;
+    private String firstName, lastName;
     private EditText emailTextField;
     private EditText firstNameTextField;
     private EditText secondNameTextField;
@@ -70,6 +71,20 @@ public class ChangeUserInformation extends AppCompatActivity implements View.OnC
                             if (response.isSuccessful() && response.body().getError().equals("ok")) {
                                 Toast.makeText(ChangeUserInformation.this, "Успешная замена данных",
                                         Toast.LENGTH_SHORT).show();
+                                if(firstNameTextField.getText().toString() == null){
+                                    firstName =  User.getUserInstance().getFirstName();
+                                }
+                                else {
+                                    firstName = firstNameTextField.getText().toString();
+                                }
+                                if (secondNameTextField.getText().toString() == null){
+                                    lastName = User.getUserInstance().getLastName();
+                                }
+                                else {
+                                    lastName = secondNameTextField.getText().toString();
+                                }
+                                User.getUserInstance().setFirstName(firstName);
+                                User.getUserInstance().setLastName(lastName);
                             } else {
                                 Toast.makeText(ChangeUserInformation.this, "Ошибка замены данных" + " " + error,
                                         Toast.LENGTH_SHORT).show();
