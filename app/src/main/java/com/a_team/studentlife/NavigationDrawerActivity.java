@@ -1,9 +1,7 @@
 package com.a_team.studentlife;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,8 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
+import android.view.View;
+import android.widget.TextView;
 
+import com.a_team.studentlife.UserInformation.User;
 import com.a_team.studentlife.navigation_drawer_fragments.FragmentAccount;
 import com.a_team.studentlife.navigation_drawer_fragments.FragmentLeague;
 import com.a_team.studentlife.navigation_drawer_fragments.FragmentNews;
@@ -23,13 +23,15 @@ import com.a_team.studentlife.navigation_drawer_fragments.FragmentStore;
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private TextView userNameNavigationDrawer;
     DrawerLayout drawer;
     FragmentAccount fragmentAccount;
     FragmentNews fragmentNews;
     FragmentLeague fragmentLeague;
-    FragmentStore fragmentStore;
     FragmentSettings fragmentSettings;
+    FragmentStore fragmentStore;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +60,8 @@ public class NavigationDrawerActivity extends AppCompatActivity
         fragmentAccount = new FragmentAccount();
         fragmentNews = new FragmentNews();
         fragmentLeague = new FragmentLeague();
-        fragmentStore = new FragmentStore();
         fragmentSettings = new FragmentSettings();
+        fragmentStore = new FragmentStore();
 
         View headerView = navigationView.getHeaderView(0);
 
@@ -72,6 +74,14 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 drawer.closeDrawer(GravityCompat.START);
             }
         });
+
+        userNameNavigationDrawer = (TextView) headerView.findViewById(R.id.user_name_navigation_drawer);
+        userNameNavigationDrawer.setText(User.getUserInstance().getFirstName() + " " +
+                User.getUserInstance().getLastName());
+
+        android.support.v4.app.FragmentTransaction frTransaction = getSupportFragmentManager().beginTransaction();
+        setTitle("Новости");
+        frTransaction.replace(R.id.container, fragmentNews).commit();
     }
 
     @Override

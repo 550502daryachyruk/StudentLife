@@ -1,23 +1,21 @@
 package com.a_team.studentlife.navigation_drawer_fragments;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ProgressBar;
 
 import com.a_team.studentlife.R;
-import com.a_team.studentlife.Server.APIService;
-import com.a_team.studentlife.Server.Retrofit.ApiUtils;
-import com.a_team.studentlife.Server.ServerResponse.ServerResponse;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.a_team.studentlife.UserInformation.User;
+import com.a_team.studentlife.adapter.leagues.LeaguesAdapter;
+import com.a_team.studentlife.card_view_filling.LeagueListElement;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,9 +36,10 @@ public class FragmentStore extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-    private Button serverWorkButton;
-    private TextView responseBodyTextView;
-    private APIService mAPIService;
+    private RecyclerView recyclerView;
+    private LinearLayoutManager verticalLinearLayoutManager;
+    private LeaguesAdapter leaguesAdapter;
+    private ProgressBar progressBarSpinner;
 
     public FragmentStore() {
         // Required empty public constructor
@@ -74,21 +73,18 @@ public class FragmentStore extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_store, container, false);
-
-        mAPIService = ApiUtils.getAPIService();
-
-        serverWorkButton = view.findViewById(R.id.serverWork);
-        responseBodyTextView = view.findViewById(R.id.responseBody);
-        serverWorkButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendMessage("Test message");
-            }
-        });
+        View view = inflater.inflate(R.layout.fragment_league, container, false);
+        recyclerView = view.findViewById(R.id.recycler_list_posts_leagues);
+        progressBarSpinner = view.findViewById(R.id.loading_spinner);
+        progressBarSpinner.setVisibility(View.VISIBLE);
+        verticalLinearLayoutManager = new LinearLayoutManager(view.getContext());
+        recyclerView.setLayoutManager(verticalLinearLayoutManager);
+        leaguesAdapter = new LeaguesAdapter();
+        LeagueListElement.getLeagueListElements(view.getContext(), leaguesAdapter, recyclerView,
+                progressBarSpinner, User.getUserInstance().getId(), true);
         return view;
     }
 
@@ -129,28 +125,5 @@ public class FragmentStore extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-    }
-
-    public void sendMessage(String message) {
-        mAPIService.sendMessagePOST(message).enqueue(new Callback<ServerResponse>() {
-            @Override
-            public void onResponse(Call<ServerResponse> call, Response<ServerResponse> response) {
-                if(response.isSuccessful()) {
-                    showResponse(response.body().getMessage());
-                    Toast.makeText(getContext(), "Запрос выполнился успешно", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getContext(), "Сервер вернул ошибку", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ServerResponse> call, Throwable t) {
-                Toast.makeText(getContext(), "Ошибка во время выполнения запроса", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void showResponse(String responseText) {
-        responseBodyTextView.setText(responseText);
     }
 }
