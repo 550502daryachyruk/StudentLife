@@ -27,7 +27,7 @@
 3. Осуществление клиент-серверного взаимодействия с использованием соответствующих протоколов.
 4. Использование алгоритмов шифрования, встроенного в Symphony для шифрования паролей.
 ## 6. To be architecture:
-1. Диаграмма классов.
+#### Диаграмма классов.
 
 ![Ссылка на изоражение](https://github.com/550502daryachyruk/StudentLife/tree/master/Documentation/pictures/ClassDiagramExpected.png)
 
@@ -37,15 +37,14 @@
 
 # Часть 2
 ## As is architecture:
+####Диаграмма классов.  
+
 
 ![Ссылка на изображение](https://github.com/550502daryachyruk/StudentLife/tree/master/Documentation/pictures/ClassDiagramReal.png)
 
-
-
 Подробная развертка каждого класса находится в папке:
 [ссылка на папку с подробным описанием классов](https://github.com/550502daryachyruk/StudentLife/tree/master/Documentation/pictures/ClassesReal)
-
-1. Диаграмма классов.
+  
 # Часть 3
 
 Идеальные и реальные версии архитектуры данного пиложения слабо отличаются друг от друга.
