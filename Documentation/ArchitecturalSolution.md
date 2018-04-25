@@ -33,7 +33,7 @@
 
 
 Подробная развертка каждого класса находится в папке:
-[Ref 1](https://github.com/550502daryachyruk/StudentLife/tree/master/Documentation/pictures/classesEcpected)
+[ссылка на папку с подробным описанием классов](https://github.com/550502daryachyruk/StudentLife/tree/master/Documentation/pictures/classesEcpected)
 
 # Часть 2
 ## As is architecture:
@@ -43,7 +43,7 @@
 
 
 Подробная развертка каждого класса находится в папке:
-[Ref 1](https://github.com/550502daryachyruk/StudentLife/tree/master/Documentation/pictures/ClassesReal)
+[ссылка на папку с подробным описанием классов](https://github.com/550502daryachyruk/StudentLife/tree/master/Documentation/pictures/ClassesReal)
 
 1. Диаграмма классов.
 # Часть 3
