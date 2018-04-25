@@ -37,7 +37,7 @@
 
 # Часть 2
 ## As is architecture:
-####Диаграмма классов.  
+#### Диаграмма классов.  
 
 
 ![Ссылка на изображение](https://github.com/550502daryachyruk/StudentLife/tree/master/Documentation/pictures/ClassDiagramReal.png)
