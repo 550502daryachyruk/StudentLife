@@ -31,6 +31,8 @@
                                 Развлекательная программа и флешмоб
                                 "Танцуем вместе с гостями". Начало в 14.00</string>
     <string name="participants">150</string>
+    <string name="date_of_event_text">Дата:</string>
+    <string name="time_of_event_text">Время:</string>
     <string name="postedLikes">210</string>
 
     // User profile
@@ -82,7 +84,7 @@
     <string name="buy_product_price_text">Цена:</string>
     <string name="buy_product_button_text">Купить</string>
     <string name="hello_blank_fragment">hello</string>
-    <string name="user_league_money_value_text">Количество валюты в лиге</string>
+    <string name="user_league_money_value_text">Валюты в лиге</string>
 
     <string name="send_invite">Создать мероприятие</string>
     <string name="cancelInviteButton">Отмена</string>
@@ -107,5 +109,21 @@
     <string name="description_of_product">Описание товара</string>
     <string name="product_create">Создать товар</string>
     <string name="price_of_the_product">Цена товара</string>
+
+
+    // About as
+    <string name="aboutAsHeaderText">Состав \"Команды А\"</string>
+    <string name="first_member_about_as">Кузьменко Алексей</string>
+    <string name="second_member_about_as">Быцко Никита</string>
+    <string name="third_member_about_as">Шляхтович Николай</string>
+    <string name="fourth_member_about_as">Кудрявец Илья</string>
+    <string name="fifth_member_about_as">Чирук Дарья</string>
+
+    // Notifications
+    <string name="all_notifications_switch_text">Включить уведомления</string>
+    <string name="questions_notifications_switch_text">Опросы</string>
+    <string name="sub_and_news_notifications_switch_text">Новости и подписка</string>
+    <string name="notifications_header_text">Настройка уведомлений</string>
+    <string name="save_notifications_settings_text">Сохранить настройки</string>
 
 </resources>

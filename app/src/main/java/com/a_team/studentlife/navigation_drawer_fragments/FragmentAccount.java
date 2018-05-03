@@ -8,11 +8,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.a_team.studentlife.R;
 import com.a_team.studentlife.UserInformation.User;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,6 +38,9 @@ public class FragmentAccount extends Fragment {
     private TextView userProfileName;
     private ScrollView scrollView;
     private AnimationDrawable animationDrawable;
+    private TextView showNewsTextView;
+    private TextView showShopTextView;
+    private ImageView userProfilePhoto;
 
     public FragmentAccount() {
         // Required empty public constructor
@@ -74,7 +79,26 @@ public class FragmentAccount extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_account, container, false);
-
+        showShopTextView = (TextView) view.findViewById(R.id.shop_account_button);
+        showShopTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.support.v4.app.FragmentTransaction frTransaction =
+                        getActivity().getSupportFragmentManager().beginTransaction();
+                getActivity().setTitle("Магазин");
+                frTransaction.replace(R.id.container, new FragmentStore()).commit();
+            }
+        });
+        showNewsTextView = (TextView) view.findViewById(R.id.news_account_button);
+        showNewsTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.support.v4.app.FragmentTransaction frTransaction =
+                        getActivity().getSupportFragmentManager().beginTransaction();
+                getActivity().setTitle("Новости");
+                frTransaction.replace(R.id.container, new FragmentNews()).commit();
+            }
+        });
         scrollView = (ScrollView) view.findViewById(R.id.scroll_view_account);
         animationDrawable = (AnimationDrawable) scrollView.getBackground();
         animationDrawable.setEnterFadeDuration(5000);
@@ -84,6 +108,11 @@ public class FragmentAccount extends Fragment {
         userProfileName = (TextView) view.findViewById(R.id.user_profile_name);
         userProfileName.setText(User.getUserInstance().getFirstName() + " " +
                                 User.getUserInstance().getLastName());
+
+        userProfilePhoto = (ImageView) view.findViewById(R.id.user_profile_photo);
+        Picasso.get().load(
+                "http://82.209.228.129/api/user/viewimage?id=" +
+                        User.getUserInstance().getId()).into(userProfilePhoto);
         //Toast.makeText(view.getContext(), User.getUserInstance().getFirstName(), Toast.LENGTH_SHORT).show();
         return view;
     }

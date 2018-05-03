@@ -158,4 +158,16 @@ public class User {
         }
         return true;
     }
+
+    public void cleanUserInformation(Context context) {
+        try {
+            BufferedWriter bw = new BufferedWriter(new
+                    OutputStreamWriter(context.openFileOutput(FILE_NAME, Context.MODE_PRIVATE)));
+            bw.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

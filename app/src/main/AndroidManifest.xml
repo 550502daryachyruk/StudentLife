@@ -34,12 +34,27 @@
         <activity
             android:name=".adapter.Shop.LeagueShopProductsActivity"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".adapter.Shop.BuyProductActivity"
+        <activity
+            android:name=".adapter.Shop.BuyProductActivity"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".UserInformation.ChangeUserInformationActivity"
+        <activity
+            android:name=".UserInformation.ChangeUserInformationActivity"
             tools:ignore="InnerclassSeparator" />
-        <service android:name=".Services.NewsAndSubscriptionService"
+
+        <service
+            android:name=".Services.NewsAndSubscriptionService"
             tools:ignore="InnerclassSeparator" />
+
+        <activity android:name=".AboutAsActivity" />
+        <activity android:name=".NotificationsActivity" />
+
+        <service
+            android:name=".Services.QuizService"
+            tools:ignore="InnerclassSeparator" />
+
+        <activity android:name=".InterviewActivity" />
+        <activity android:name=".OwnEventsActivity" />
+        <activity android:name=".CreateEventActivity"></activity>
     </application>
 
 </manifest>

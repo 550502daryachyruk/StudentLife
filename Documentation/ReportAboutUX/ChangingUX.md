@@ -35,11 +35,12 @@
 ### Улучшения
 Улучения проведены в цыетовых решениях в магазине (купленные товары имеют статус "куплено "зеленым цветом, некупленные - красным "Еще не куплено"). При авторизации добавлена возможность выбирать пользователя из списка, что удобно при работе. И изменена иконка приложения. Другие такого же рода изменения вы можете видеть на картинках.
 ### Картинки/описания “до” vs. “после”
+
 Самые значимые, на наш взгляд, изменения следующие:
 
 1. Изменение иконки приложения.  
-![До](https://github.com/550502daryachyruk/StudentLife/blob/master/Documentation/ReportAboutUX/examplesUX/icon/icon_before.jpg) =========================>
-![После](https://github.com/550502daryachyruk/StudentLife/blob/master/Documentation/ReportAboutUX/examplesUX/icon/icon_after1.jpg)  
+![До](https://github.com/5ALEKSEY/StudentLife/blob/master/Documentation/ReportAboutUX/examplesUX/icon/icon_before.jpg) =========================>
+![После](https://github.com/5ALEKSEY/StudentLife/blob/master/Documentation/ReportAboutUX/examplesUX/icon/icon_after1.jpg)  
 
 2. Возможность просмотра списка всех лиг в меню пользователя, для того, чтобы их в принципе видеть.
 
@@ -49,4 +50,4 @@
 
 
 Пройдя по данной ссылке вы можете увидеть все проведенные изменения.
-[ссылка на папку с картинками, иллюстрирующими изменения](https://github.com/550502daryachyruk/StudentLife/tree/master/Documentation/ReportAboutUX/examplesUX)
+[ссылка на папку с картинками, иллюстрирующими изменения](https://github.com/5ALEKSEY/StudentLife/tree/master/Documentation/ReportAboutUX/examplesUX)
