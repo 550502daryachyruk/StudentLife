@@ -29,7 +29,7 @@
 ## 6. To be architecture:
 #### Диаграмма классов.
 
-![Ссылка на изоражение](https://github.com/5ALEKSEY/StudentLife/blob/master/Documentation/Pictures/MVP_expected.jpg)
+![Ссылка на изоражение](https://github.com/550502daryachyruk/StudentLife/blob/master/Documentation/Pictures/MVP_expected.jpg)
 
 
 # Часть 2
