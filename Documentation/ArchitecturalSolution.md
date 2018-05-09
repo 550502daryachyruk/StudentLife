@@ -29,11 +29,8 @@
 ## 6. To be architecture:
 #### Диаграмма классов.
 
-![Ссылка на изоражение](https://github.com/5ALEKSEY/StudentLife/blob/master/Documentation/Pictures/ClassDiagramExpected.png)
+![Ссылка на изоражение](https://github.com/5ALEKSEY/StudentLife/blob/master/Documentation/Pictures/MVP_expected.jpg)
 
-
-Подробная развертка каждого класса находится в папке:
-[ссылка на папку с подробным описанием классов](https://github.com/5ALEKSEY/StudentLife/tree/master/Documentation/Pictures/ClassesEcpected)
 
 # Часть 2
 ## As is architecture:
@@ -58,3 +55,4 @@
 3. Добавление опросов.
 4. Добавление подписки.
 5. Рефакторинг дизайна (стилизация).
+(Все перечисленные улучшения были добавлены к 04.05.2018)
